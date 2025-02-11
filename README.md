@@ -1,16 +1,14 @@
-# flutter_final_exam
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![1](https://github.com/user-attachments/assets/ceabdb5c-8aba-4a1f-98bc-fa45f4501737)
+![2](https://github.com/user-attachments/assets/93ba1cae-efe4-4a77-a356-fa2dbc2123ba)
+![3](https://github.com/user-attachments/assets/8f1bfce2-7f10-4526-a213-8252abfb3df7)
+![4](https://github.com/user-attachments/assets/e9a1548b-46e4-42fb-9f90-0698812e0483)
+![5](https://github.com/user-attachments/assets/402d77e6-22bf-44b1-ba4b-91ed2e070681)
+![6](https://github.com/user-attachments/assets/ee60f06b-eb1a-4e1d-8269-55d731f100c3)
+![7](https://github.com/user-attachments/assets/5a5d6819-b692-4c63-8efd-b69802ac0cee)
+![8](https://github.com/user-attachments/assets/39b518d7-bf63-48dd-81c1-61892ad9f69b)
+![9](https://github.com/user-attachments/assets/8e204a1f-72d6-46d0-8b79-f1751e223aac)
+![10](https://github.com/user-attachments/assets/c663829e-a8df-4c89-8c1b-23a37b1a4dc3)
+![11](https://github.com/user-attachments/assets/255a8be4-e088-4ed9-bddc-c0b8c11b3bb1)
+![12](https://github.com/user-attachments/assets/f7527be9-eba1-40ab-9629-1ac03f71fed4)
+![13](https://github.com/user-attachments/assets/3dbf7bbb-77b5-4f79-aad3-08618cac0c7d)
+![14](https://github.com/user-attachments/assets/7272297f-80c7-4219-aee2-3307ce8b1ad0)
