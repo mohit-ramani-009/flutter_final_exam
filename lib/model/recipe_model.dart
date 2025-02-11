@@ -15,7 +15,7 @@ class Recipe {
 
   factory Recipe.fromMap(Map<String, dynamic> map) {
     return Recipe(
-      id: map['id'].toString(),  // Convert int to String to prevent type errors
+      id: map['id'].toString(),
       name: map['name'],
       description: map['description'],
     );

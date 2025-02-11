@@ -11,48 +11,72 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Recipes')),
+      appBar: AppBar(
+        title: Text('Recipes', style: TextStyle(fontWeight: FontWeight.bold)),
+        centerTitle: true,
+        foregroundColor: Colors.white,
+        backgroundColor: Colors.teal,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.favorite, color: Colors.red),
+            onPressed: () => Get.to(LikedRecipePage()),
+          ),
+        ],
+      ),
       body: Obx(() {
         if (recipeController.recipes.isEmpty) {
-          return Center(child: Text("No recipes found!"));
+          return Center(
+            child: Text("No recipes found!",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+          );
         }
-        return ListView.builder(
-          itemCount: recipeController.recipes.length,
-          itemBuilder: (context, index) {
-            final recipe = recipeController.recipes[index];
-            return ListTile(
-              title: Text(recipe.name),
-              subtitle: Text(recipe.description),
-              trailing: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  IconButton(
-                    icon: Icon(Icons.favorite, color: Colors.red),
-                    onPressed: () => recipeController.addToFavorites(recipe),
+        return Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: ListView.builder(
+            itemCount: recipeController.recipes.length,
+            itemBuilder: (context, index) {
+              final recipe = recipeController.recipes[index];
+              return Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                elevation: 4,
+                margin: EdgeInsets.symmetric(vertical: 8),
+                child: ListTile(
+                  contentPadding: EdgeInsets.all(15),
+                  title: Text(recipe.name,
+                      style: TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.bold)),
+                  subtitle: Text(recipe.description,
+                      style: TextStyle(color: Colors.grey[700])),
+                  trailing: PopupMenuButton<String>(
+                    onSelected: (value) {
+                      if (value == "Edit") {
+                        Get.to(EditRecipeScreen(recipe: recipe));
+                      } else if (value == "Delete") {
+                        recipeController.deleteRecipe(recipe.id!);
+                      } else if (value == "Favorite") {
+                        recipeController.addToFavorites(recipe);
+                      }
+                    },
+                    itemBuilder: (BuildContext context) => [
+                      PopupMenuItem(value: "Edit", child: Text("Edit")),
+                      PopupMenuItem(value: "Delete", child: Text("Delete")),
+                      PopupMenuItem(value: "Favorite", child: Text("Favorite")),
+                    ],
+                    icon: Icon(Icons.more_vert, color: Colors.black54),
                   ),
-                  IconButton(
-                    icon: Icon(Icons.edit, color: Colors.blue),
-                    onPressed: () => Get.to(EditRecipeScreen(recipe: recipe)),
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.delete, color: Colors.red),
-                    onPressed: () => recipeController.deleteRecipe(recipe.id!),
-                  ),
-                ],
-              ),
-            );
-          },
+                ),
+              );
+            },
+          ),
         );
       }),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: () => Get.to(AddRecipeScreen()),
-        child: Icon(Icons.add),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        child: IconButton(
-          icon: Icon(Icons.favorite),
-          onPressed: () => Get.to(LikedRecipePage()),
-        ),
+        label: Text("Add Recipe",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
+        icon: Icon(Icons.add,color: Colors.white,),
+        backgroundColor: Colors.teal,
       ),
     );
   }
